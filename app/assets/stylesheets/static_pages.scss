@@ -38,6 +38,14 @@
     border: 2px solid red;
     left: 0;
     top: 0;
-    width: 50px;
+    width: 5%;
+    height: 5%;
+}
+
+.floating-message{
+    position: absolute; 
+    width: 200px;
     height: 50px;
+    background: rgba(0, 0, 0, .5);
+    color: white;
 }

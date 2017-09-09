@@ -8,9 +8,14 @@ $(".static_pages.game").ready(function(){
             top: mouseY
         })); 
         setTimeout(function() {$('.click-effect').addClass("disable-effect")}, 500)
-    });
-    
-    $("#waldo").on("click", function(){
-       console.log("waldo"); 
+        setTimeout(function() {$('.click-effect').first().remove()}, 900)
+        $("#waldo").on("click", function(e){
+            if(!$("*").hasClass("floating-message")){
+                 $("#main").append($('<div><p>You Won!<p><div/>').addClass("floating-message").css({
+                    left: e.pageX,
+                    top: e.pageY
+                }));
+            }
+        });
     });
 });
