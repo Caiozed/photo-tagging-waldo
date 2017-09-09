@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import 'bootstrap';
 
 /*css reset*/
 html, body, div, span, applet, object, iframe,
@@ -71,4 +72,48 @@ table {
 
 #main{
     margin-top: 50px;
+}
+
+.container{
+	width: 90%;
+	margin: auto;
+}
+
+.navbar-custom {
+    overflow: hidden;
+    background-color: #333;
+    width: 100%; /* Full width */
+    color: white;
+    a{
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+}
+
+.img-responsive{
+	display: block;
+	margin: auto;
+	width: 90%;
+	height: 90%;
+	transition: all 1s;
+    &:hover{
+        width: 92%;
+		height: 92%;
+    }
+}
+
+.page-header{
+	font-size: 30px;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.article-header{
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px 0;
 }

@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
   def index
-    print "in index"    
+  
+  end
+  
+  def game
+  
   end
 end
