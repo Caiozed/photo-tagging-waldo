@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
   
-  get 'game', to: 'static_pages#game'
+  get 'game/:id', to: 'static_pages#game', as: :game
+  get 'games', to: 'static_pages#games'
+  get 'contact', to: 'static_pages#contact'
+  
+  resources :players, only: [:create]  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

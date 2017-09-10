@@ -1,0 +1,61 @@
+<div class="page-header">
+    <h1>Choose a game</h1>
+</div>
+
+<section class="row align-self-center">
+    <article class="col">
+        <div class="menu-image menu-game">
+            <h2 class="article-header">Game 1</h2>
+            <%= link_to image_tag("game1.jpg", class: "img-responsive"), game_path(1), method: :get%>
+        </div>
+    </article>
+    <article class="col">
+        <div class="menu-image menu-game">
+            <h2 class="article-header">Game 2</h2>
+            <%= link_to image_tag("game1.jpg", class: "img-responsive"), game_path(2), method: :get%>
+        </div>
+    </article>
+    <article class="col">
+       <div class="menu-image menu-game">
+            <h2 class="article-header">Game 3</h2>
+            <%= link_to image_tag("game1.jpg", class: "img-responsive"), game_path(3), method: :get%>
+        </div>
+    </article>
+</section>
+
+<% unless @players.nil? %>
+    <section class="row">
+        <article class="col">
+            <div class="menu-image menu-game">
+                <h2 class="article-header">Rankings for game 1</h2>
+                <% @players.each do |player|%>
+                    <%if player.game_id == 1%>
+                        <h1 class="scores page-header"><%= player.name %>: <%= player.score%>s</h1>
+                    <%end%>
+                <%end%>
+            </div>
+        </article>
+    
+    <article class="col">
+        <div class="menu-image menu-game">
+            <h2 class="article-header">Rankings for game 2</h2>
+            <% @players.each do |player|%>
+                <%if player.game_id == 2%>
+                    <h1 class="scores page-header"><%= player.name %>: <%= player.score%>s</h1>
+                <%end%>
+            <%end%>
+        </div>
+    </article>
+    
+        <article class="col">
+            <div class="menu-image menu-game">
+                <h2 class="article-header">Rankings for game 3</h2>
+                    <% @players.each do |player|%>
+                    <%if player.game_id == 3%>
+                        <h1 class="scores page-header"><%= player.name %>: <%= player.score%>s</h1>
+                    <%end%>
+                <%end%>
+            </div>
+        </article>
+    </section>
+<%end%>

@@ -3,4 +3,16 @@
     <div id="waldo" style="left: 78%; top: 8%;">
         
     </div>
+    <div class="floating-form">
+        <div>
+            <h1 class="page-header">Ho Ho! you found me </h1>
+            <%= form_for @player do |f|%>
+                <%= f.label "Enter player name!"%>
+                <%= f.text_field :name%>
+                <%= f.hidden_field :score%>
+                <%= f.hidden_field :game_id, value: params[:id]%>
+                <%= f.submit "Submit",class: "btn btn-primary"%>
+            <%end%>
+        <div/>
+    </div>
 </div>
