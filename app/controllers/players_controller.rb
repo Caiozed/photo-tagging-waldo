@@ -1,8 +1,13 @@
 class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
-    @player.save
-    redirect_to root_path
+    if @player.save
+      flash[:success] = "Player score saved!"
+      redirect_to games_path
+    else
+      flash[:danger] = "Ops, something went wrong!!"
+      redirect_to games_path
+    end
   end
   
   def player_params

@@ -4,11 +4,12 @@ class StaticPagesController < ApplicationController
   end
   
   def games
-    @players = Player.top_ten
+    @games = Game.all
   end
   
   def game
     @player = Player.new
+    @game = Game.find(params[:id])
   end
   
   def contact

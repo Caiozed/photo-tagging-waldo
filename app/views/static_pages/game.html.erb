@@ -1,6 +1,6 @@
 <div class="game-block">
-    <%= image_tag "game1.jpg", class: "game-image"%>
-    <div id="waldo" style="left: 78%; top: 8%;">
+    <%= image_tag @game.image, class: "game-image"%>
+    <div id="waldo" style="left:<%=@game.left%>%; top:<%=@game.top%>%;">
         
     </div>
     <div class="floating-form">
